@@ -93,5 +93,10 @@ camera.position.x=THREE.MathUtils.damp(camera.position.x,senpai.position.x*.28,3
 for(let i=0;i<worldGroups.length;i++)if(worldGroups[i].visible){worldGroups[i].position.z=0}
 renderer.render(scene,camera)}
 let prev=performance.now();function loop(now){requestAnimationFrame(loop);const dt=Math.min(.04,(now-prev)/1000);prev=now;if(state==='playing')update(dt);else if(dialogTimer>0)update(dt);render(now)}
-window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7)});
+window.addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));
+});
 $('#loading').classList.add('hidden');requestAnimationFrame(loop);
