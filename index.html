@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#101628">
+<title>Senpai — The Endless Chase</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="game" aria-label="Senpai endless runner game"></canvas>
+  <div id="hud" class="hidden">
+    <div class="hud-top">
+      <div class="pill"><span>🏃</span> <b id="distance">0</b><small>m</small></div>
+      <div class="pill coins">🪙 <b id="coins">0</b></div>
+      <button id="pauseBtn" class="round-btn" aria-label="Pause">Ⅱ</button>
+    </div>
+    <div class="name-tag senpai-tag">SENPAI</div>
+    <div class="name-tag kiki-tag">KIKI ♥</div>
+    <div id="chaseWrap"><span>KIKI'S DISTANCE</span><div class="meter"><i id="chaseMeter"></i></div></div>
+    <div id="toast"></div>
+    <div id="dialogue" class="dialogue hidden"><div id="speaker">KIKI</div><div id="line"></div></div>
+    <div class="touch-controls">
+      <button data-action="left">◀</button><button data-action="jump">▲</button><button data-action="slide">▼</button><button data-action="right">▶</button>
+    </div>
+  </div>
+  <section id="menu" class="screen">
+    <div class="brand">SENPAI <span>♥</span></div>
+    <div class="subtitle">THE ENDLESS CHASE</div>
+    <p class="tagline">“I wanna marry you! Don't run!”</p>
+    <div class="menu-card">
+      <div class="avatar-row"><div class="avatar senpai-avatar">S</div><div class="versus">♡</div><div class="avatar kiki-avatar">K</div></div>
+      <h1>Ready to run?</h1>
+      <p>Escape Kiki, dodge traps, collect coins, and survive the ever-changing path.</p>
+      <label for="mode">GAME MODE</label>
+      <select id="mode">
+        <option value="endless">Endless Run</option>
+        <option value="missions">Missions</option>
+        <option value="story">Story Mode</option>
+        <option value="daily">Daily Challenge</option>
+      </select>
+      <button id="startBtn" class="primary">START RUN <span>➜</span></button>
+      <div class="help">SWIPE or use ← → · ↑ jump · ↓ slide<br>PC: Arrow keys / WASD · Space to jump</div>
+    </div>
+    <div class="footnote">A fan-made browser game prototype · Original characters and gameplay inspired by endless runners</div>
+  </section>
+  <section id="pause" class="screen hidden">
+    <div class="modal">
+      <div class="eyebrow">TAKE A BREATH</div><h1>Paused</h1><p>Kiki is waiting… probably.</p>
+      <button id="resumeBtn" class="primary">RESUME</button><button id="quitBtn" class="secondary">END RUN</button>
+    </div>
+  </section>
+  <section id="gameover" class="screen hidden">
+    <div class="modal">
+      <div class="eyebrow">CAUGHT!</div><h1 id="endTitle">Kiki caught Senpai!</h1>
+      <p id="endLine">“You're not running away anymore. I'm going to marry you now!”</p>
+      <div class="stats"><div><b id="finalDistance">0</b><small>METERS</small></div><div><b id="finalCoins">0</b><small>COINS</small></div></div>
+      <button id="againBtn" class="primary">RUN AGAIN ↻</button><button id="homeBtn" class="secondary">MAIN MENU</button>
+    </div>
+  </section>
+  <div id="soundToggle" class="sound-toggle" title="Toggle sound">🔊</div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
