@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#17162b">
+<title>Senpai — The Endless Chase</title>
+</head>
+<body>
+<div id="game-root">
+  <div id="loading"><div class="logo">SENPAI <span>♥</span></div><div class="loadbar"><i></i></div><p>Preparing the chase…</p></div>
+  <canvas id="scene"></canvas>
+  <header id="hud" class="hidden">
+    <div class="stat"><small>DISTANCE</small><strong><span id="distance">0</span><em>m</em></strong></div>
+    <div class="stat coins"><small>COINS</small><strong>◆ <span id="coins">0</span></strong></div>
+    <button id="pause" class="icon-button" aria-label="Pause">Ⅱ</button>
+  </header>
+  <div id="chase" class="hidden"><div class="chase-label">KIKI IS CATCHING UP <b id="chase-value">22%</b></div><div class="track"><i id="chase-fill"></i></div></div>
+  <div id="world-label" class="hidden">ANCIENT JUNGLE</div>
+  <div id="dialogue" class="hidden"><b id="speaker">KIKI</b><span id="dialogue-text"></span><button id="skip-dialogue">SKIP ›</button></div>
+  <div id="touch" class="hidden">
+    <button data-move="left" aria-label="Move left">‹</button>
+    <div><button data-move="jump" aria-label="Jump">↑</button><button data-move="slide" aria-label="Slide">↓</button></div>
+    <button data-move="right" aria-label="Move right">›</button>
+  </div>
+  <section id="menu" class="overlay">
+    <div class="brand">SENPAI <span>♥</span></div><div class="subtitle">THE ENDLESS CHASE</div>
+    <p class="quote">“I wanna marry you! Don't run!”</p>
+    <div class="panel">
+      <div class="duo"><div class="portrait boy">S</div><div class="heart">♥</div><div class="portrait girl">K</div></div>
+      <h1>Ready to run?</h1><p>Escape Kiki through beautiful, ever-changing worlds.</p>
+      <label for="mode">GAME MODE</label><select id="mode"><option value="endless">Endless Run</option><option value="missions">Missions</option><option value="story">Story Mode</option><option value="daily">Daily Challenge</option></select>
+      <button id="start" class="primary">START RUN <span>➜</span></button>
+      <div class="controls-help">SWIPE ◀ ▶ · SWIPE UP TO JUMP · SWIPE DOWN TO SLIDE<br>PC: ← → · ↑ / SPACE · ↓</div>
+    </div>
+    <small class="disclaimer">3D browser game prototype · Original game concept</small>
+  </section>
+  <section id="pause-menu" class="overlay hidden"><div class="panel modal"><small class="eyebrow">TAKE A BREATH</small><h1>Paused</h1><p>Kiki is still right behind you.</p><button id="resume" class="primary">RESUME</button><button id="restart-pause" class="secondary">RESTART RUN</button><button id="quit" class="secondary">MAIN MENU</button></div></section>
+  <section id="gameover" class="overlay hidden"><div class="panel modal"><small class="eyebrow">CAUGHT!</small><h1>Kiki caught Senpai!</h1><p id="end-dialogue">“You're not running away anymore. I'm going to marry you now!”</p><div class="results"><div><b id="final-distance">0</b><small>METERS</small></div><div><b id="final-coins">0</b><small>COINS</small></div></div><button id="again" class="primary">RUN AGAIN ↻</button><button id="home" class="secondary">MAIN MENU</button></div></section>
+  <button id="sound" class="sound">♫</button>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
